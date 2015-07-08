@@ -1,0 +1,54 @@
+.checked, .unchecked {
+  background-color: $orange;
+  border-radius: 100%;
+  background-size: 70%;
+}
+
+.checkmark {
+  padding: 0;
+}
+
+.checkmark a {
+  margin-left: 0.9375rem;
+  margin-top: 10px;
+}
+
+.todo-content {
+  margin-top: 6px;
+}
+
+.unchecked {
+  background-image: none;
+}
+
+#todo-list-functions .outline {
+  background: none;
+  color: $blue;
+  border: 1px solid $blue;
+  &.alert {
+    border-color: red;
+    color: red;
+  }
+}
+
+#todo-list-functions {
+  margin-top: 10px;
+  a span.fa {
+    display: block;
+    font-size: 1.4em;
+    clear: both;
+  }
+}
+
+.fa-caret-down, .fa-caret-up {
+  color: white;
+  padding-top: 20px;
+}
+
+.todo-list-title {
+  background: $orange;
+}
+
+.todo-list-title h2 {
+  margin: 0;
+}

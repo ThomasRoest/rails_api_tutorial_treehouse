@@ -1,0 +1,13 @@
+<div class="small-4 columns header-icon">
+  <% if @go_back_link_to %>
+    <%= link_to "Back", @go_back_link_to, class: "icon-arrow-left hide-text" %>
+  <% else %>
+    <%= link_to "Sign Out", logout_path, method: :delete, class: "icon-signout hide-text" %>
+  <% end %>
+</div>
+<div class="small-4 columns">
+  <h1 class="logo"><%= link_to "Odot", todo_lists_path, class: "hide-text" %></h1>
+</div>
+<div class="small-4 columns header-icon">
+  <%= new_item_link %>
+</div>

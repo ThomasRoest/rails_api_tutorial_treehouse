@@ -1,0 +1,10 @@
+<%= title "Register for ODOT" %>
+
+<%= form_for(@user, builder: FoundationFormBuilder) do |f| %>
+  <%= f.text_field :first_name, autofocus: 'autofocus' %>
+  <%= f.text_field :last_name %>
+  <%= f.email_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation, label: "Password (again)" %>
+  <%= f.submit "Sign Up" %>
+<% end %>

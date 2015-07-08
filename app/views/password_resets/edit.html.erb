@@ -1,0 +1,9 @@
+<%= title "Change Your Password" %>
+
+<%= form_for @user, builder: FoundationFormBuilder, url: password_reset_path(@user.password_reset_token), html: { method: :patch } do |form| %>
+
+  <%= form.password_field :password %>
+  <%= form.password_field :password_confirmation, label: "Password (again)" %>
+  
+  <%= submit_tag "Change Password" %>
+<% end %>

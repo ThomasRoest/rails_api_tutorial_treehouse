@@ -1,0 +1,23 @@
+<%= title "Reset Password" %>
+
+<%= form_tag password_resets_path do %>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= label_tag :email, "Email" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= text_field_tag :email %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= submit_tag "Reset Password", class: "button radius expand" %>
+    </div>
+  </div>
+
+<% end %>
