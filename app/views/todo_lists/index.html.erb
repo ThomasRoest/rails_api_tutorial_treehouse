@@ -1,6 +1,6 @@
 <%= title "Todo Lists" %>
 
-<% if @todo_lists.size > 0 %>
+<% if @todo_lists.length > 0 %>
   <ul class="list todo-lists no-bullet">
     <%= render partial: "todo_list", collection: @todo_lists %>
   </ul>
