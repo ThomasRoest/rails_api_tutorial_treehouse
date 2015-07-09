@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   def render_error
     render file: 'public/500.html', status: :internal_server_error, layout: false
   end
+  
   def logged_in?
     current_user
   end

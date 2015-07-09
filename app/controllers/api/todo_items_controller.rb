@@ -1,5 +1,4 @@
-class Api::TodoItemsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+class Api::TodoItemsController < Api::ApiController
   before_filter :find_todo_list
 
   def index
@@ -62,6 +61,6 @@ class Api::TodoItemsController < ApplicationController
   end
 
   def find_todo_list
-    @list = TodoList.find(params[:todo_list_id])
+    @list = current_user.todo_lists.find(params[:todo_list_id])
   end
 end

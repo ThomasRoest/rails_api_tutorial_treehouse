@@ -1,18 +1,18 @@
-class Api::TodoListsController < ApplicationController
-	skip_before_filter :verify_authenticity_token
+class Api::TodoListsController < Api::ApiController
 
   def index
+    Rails.logger.info "current user: #{current_user.inspect}"
     render json: TodoList.all
   end
 
   def show
-    list = TodoList.find(params[:id])
+    list = current_user.todo_lists.find(params[:id])
     render json: list.as_json(include:[:todo_items])
     #including the items in the response
   end
 
   def create
-    list = TodoList.new(list_params)
+    list = current_user.todo_lists.new(list_params)
     if list.save
       render status: 200, json: {
         message: "Succesfully created todo-list",
@@ -26,7 +26,7 @@ class Api::TodoListsController < ApplicationController
   end
 
   def update
-    list = TodoList.find(params[:id])
+    list = current_user.todo_lists.find(params[:id])
     if list.update_attributes(list_params)
       render status: 200, json: { 
         message: "updated the post!",
@@ -41,7 +41,7 @@ class Api::TodoListsController < ApplicationController
   end
 
   def destroy
-    list = TodoList.find(params[:id])
+    list = current_user.todo_lists.find(params[:id])
     list.destroy
     render status: 200, json: {
       message: "Succesfully deleted to-do list"
